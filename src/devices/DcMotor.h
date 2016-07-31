@@ -17,9 +17,9 @@
 			// -----
 			private:
 			// -----
-			short int enablePin;
-			short int control1Pin;
-			short int control2Pin;
+			short enablePin;
+			short control1Pin;
+			short control2Pin;
 		};
 	}
 

@@ -1,70 +1,28 @@
 #include "main.h"
 
-#define E1 3 // enable
-#define I1 2 // control pin 1
-#define I2 4 // control pin 2
-
-#define E2 9
-#define I21 8
-#define I22 7
-
-#define E3 11
-#define I31 12
-#define I32 13
-
-#define E4 10
-#define I41 5
-#define I42 6
+DcMotor* bottomRightWheel;
+DcMotor* topRightWheel;
+DcMotor* topLeftWheel;
+DcMotor* bottomLeftWheel;
 
 void setup() {
-	for (int i = 1; i <= 13; i++)
-		pinMode(i, OUTPUT);
+	bottomRightWheel = new DcMotor(3, 2, 4);
+	topRightWheel = new DcMotor(9, 8, 7);
+	topLeftWheel = new DcMotor(11, 12, 13);
+	bottomLeftWheel = new DcMotor(10, 5, 6);
 }
 
 void loop() {
-	digitalWrite(13, HIGH);
-
-	digitalWrite(E1, HIGH); // motors on
-	digitalWrite(E2, HIGH);
-	digitalWrite(E3, HIGH);
-	digitalWrite(E4, HIGH);
-	digitalWrite(I1, HIGH); // forward
-	digitalWrite(I21, HIGH);
-	digitalWrite(I31, HIGH);
-	digitalWrite(I41, HIGH);
-	digitalWrite(I2, LOW);
-	digitalWrite(I22, LOW);
-	digitalWrite(I32, LOW);
-	digitalWrite(I42, LOW);
-
+	bottomRightWheel->start();
 	delay(1000);
-
-	digitalWrite(E1, LOW); // stop
-	digitalWrite(E2, LOW);
-	digitalWrite(E3, LOW);
-	digitalWrite(E4, LOW);
-
+	bottomRightWheel->stop();
+	topRightWheel->start();
 	delay(1000);
-
-	digitalWrite(E1, HIGH); // on again
-	digitalWrite(E2, HIGH);
-	digitalWrite(E3, HIGH);
-	digitalWrite(E4, HIGH);
-	digitalWrite(I1, LOW); // backwards
-	digitalWrite(I21, LOW);
-	digitalWrite(I21, LOW);
-	digitalWrite(I31, LOW);
-	digitalWrite(I41, LOW);
-	digitalWrite(I2, HIGH);
-	digitalWrite(I22, HIGH);
-	digitalWrite(I32, HIGH);
-	digitalWrite(I42, HIGH);
-
+	topRightWheel->stop();
+	topLeftWheel->start();
 	delay(1000);
-
-	digitalWrite(E1, LOW); // stop
-	digitalWrite(E2, LOW);
-	digitalWrite(E3, LOW);
-	digitalWrite(E4, LOW);
+	topLeftWheel->stop();
+	bottomLeftWheel->start();
 	delay(1000);
+	bottomLeftWheel->stop();
 }
