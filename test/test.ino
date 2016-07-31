@@ -1,5 +1,3 @@
-#include "autito.h"
-
 #define E1 3 // enable
 #define I1 2 // control pin 1
 #define I2 4 // control pin 2
@@ -17,7 +15,7 @@
 #define I42 6
 
 void setup() {
-	for (int i = 1; i <= 13; i++)
+	for (int i = 1 ; i<=13 ; i++)
 		pinMode(i, OUTPUT);
 }
 
