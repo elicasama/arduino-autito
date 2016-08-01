@@ -6,10 +6,8 @@ DcMotor::DcMotor(short enablePin, short control1Pin, short control2Pin) {
 	this->control1Pin = control1Pin;
 	this->control2Pin = control2Pin;
 
-	// TODO: foreach
 	short pins[] = { enablePin, control1Pin, control2Pin, 0 };
-	for(int i=0; pins[i] != 0; i++)
-		pinMode(pins[i], OUTPUT);
+	foreach(short* pin, pins) pinMode(*pin, OUTPUT);
 
 	this->goForward();
 }
