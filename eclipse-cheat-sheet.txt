@@ -1,0 +1,4 @@
+Buscar archivos: Ctrl+Shift+R
+Formatear código: Ctrl+Shift+F
+Renombrar: Ctrl+Alt+R
+Borrar línea: Ctrl+D
