@@ -11,9 +11,7 @@ DcMotor::DcMotor(short enablePin, short control1Pin, short control2Pin) {
 	pinMode(this->control1Pin, OUTPUT);
 	pinMode(this->control2Pin, OUTPUT);
 
-	// TODO: abstraer
-	digitalWrite(this->control1Pin, HIGH);
-	digitalWrite(this->control2Pin, LOW);
+	this->goForward();
 }
 
 DcMotor::~DcMotor() { }
@@ -24,4 +22,17 @@ void DcMotor::start() {
 
 void DcMotor::stop() {
 	digitalWrite(this->enablePin, LOW);
+}
+
+void DcMotor::goForward() {
+	this->changeControlPins(HIGH, LOW);
+}
+
+void DcMotor::goReverse() {
+	this->changeControlPins(LOW, HIGH);
+}
+
+void DcMotor::changeControlPins(bool control1, bool control2) {
+	digitalWrite(this->control1Pin, control1);
+	digitalWrite(this->control2Pin, control2);
 }

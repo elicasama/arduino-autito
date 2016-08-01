@@ -7,6 +7,7 @@ DcMotor* bottomLeftWheel;
 
 void setup() {
 	bottomRightWheel = new DcMotor(3, 2, 4);
+	bottomRightWheel->goReverse();
 	topRightWheel = new DcMotor(9, 8, 7);
 	topLeftWheel = new DcMotor(11, 12, 13);
 	bottomLeftWheel = new DcMotor(10, 5, 6);

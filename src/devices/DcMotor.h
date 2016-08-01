@@ -13,6 +13,8 @@
 
 			void start();
 			void stop();
+			void goForward();
+			void goReverse();
 
 			// -----
 			private:
@@ -20,6 +22,8 @@
 			short enablePin;
 			short control1Pin;
 			short control2Pin;
+
+			void changeControlPins(bool control1, bool control2);
 		};
 	}
 
