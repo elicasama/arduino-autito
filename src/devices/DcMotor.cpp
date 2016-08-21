@@ -14,8 +14,10 @@ DcMotor::DcMotor(short enablePin, short control1Pin, short control2Pin) {
 
 DcMotor::~DcMotor() { }
 
-void DcMotor::start() {
-	analogWrite(this->enablePin, 100);
+void DcMotor::start(int speed) {
+	const int MIN_SPEED = 100;
+	int finalSpeed = map(speed, 0, 255, MIN_SPEED, 255);
+	analogWrite(this->enablePin, finalSpeed);
 }
 
 void DcMotor::stop() {

@@ -2,7 +2,9 @@
 #define _autito_H_
 
 	#include "utils/globals.h"
-	#include "devices/DcMotor.h"
-	using namespace devices;
+	#include "config.h"
+	#include "robots/Car.h"
+	
+	using namespace robots;
 
 #endif

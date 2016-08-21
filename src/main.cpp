@@ -1,35 +1,80 @@
 #include "main.h"
 
-DcMotor* bottomRightWheel;
-DcMotor* topRightWheel;
-DcMotor* topLeftWheel;
-DcMotor* bottomLeftWheel;
+void setPwmFrequencies();
+Car* car;
 
 void setup() {
-	bottomRightWheel = new DcMotor(3, 4, 2);
-	//bottomRightWheel->goReverse();
-	topRightWheel = new DcMotor(9, 8, 7);
-	topLeftWheel = new DcMotor(11, 12, 13);
-	bottomLeftWheel = new DcMotor(10, 6, 5);
-
-	int divisor = 64;
-	setPwmFrequency(3, divisor);
-	setPwmFrequency(9, divisor);
-	setPwmFrequency(11, divisor);
-	setPwmFrequency(10, divisor);
+	setPwmFrequencies();
+	car = new Car(config);
+	car->start();
 }
 
 void loop() {
-	bottomRightWheel->start();
-	//delay(1000);
-	//bottomRightWheel->stop();
-	topRightWheel->start();
-	//delay(1000);
-	//topRightWheel->stop();
-	topLeftWheel->start();
-	//delay(1000);
-	//topLeftWheel->stop();
-	bottomLeftWheel->start();
-	//delay(1000);
-	//bottomLeftWheel->stop();
+
+}
+
+// TODO: Mover a globals.c
+void setPwmFrequency(int pin, int divisor) {
+	byte mode;
+	if (pin == 5 || pin == 6 || pin == 9 || pin == 10) {
+		switch (divisor) {
+		case 1:
+			mode = 0x01;
+			break;
+		case 8:
+			mode = 0x02;
+			break;
+		case 64:
+			mode = 0x03;
+			break;
+		case 256:
+			mode = 0x04;
+			break;
+		case 1024:
+			mode = 0x05;
+			break;
+		default:
+			return;
+		}
+		if (pin == 5 || pin == 6) {
+			TCCR0B = (TCCR0B & 0b11111000) | mode;
+		} else {
+			TCCR1B = (TCCR1B & 0b11111000) | mode;
+		}
+	} else if (pin == 3 || pin == 11) {
+		switch (divisor) {
+		case 1:
+			mode = 0x01;
+			break;
+		case 8:
+			mode = 0x02;
+			break;
+		case 32:
+			mode = 0x03;
+			break;
+		case 64:
+			mode = 0x04;
+			break;
+		case 128:
+			mode = 0x05;
+			break;
+		case 256:
+			mode = 0x06;
+			break;
+		case 1024:
+			mode = 0x7;
+			break;
+		default:
+			return;
+		}
+		TCCR2B = (TCCR2B & 0b11111000) | mode;
+	}
+}
+
+void setPwmFrequencies() {
+	int divisor = 64;
+	setPwmFrequency(config.PIN_LOWER_RIGHT_E, divisor);
+	setPwmFrequency(config.PIN_UPPER_RIGHT_E, divisor);
+	setPwmFrequency(config.PIN_UPPER_LEFT_E, divisor);
+	setPwmFrequency(config.PIN_LOWER_LEFT_E, divisor);
 }

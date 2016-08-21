@@ -11,7 +11,7 @@
 			DcMotor(short enablePin, short control1Pin, short control2Pin);
 			virtual ~DcMotor();
 
-			void start();
+			void start(int speed);
 			void stop();
 			void goForward();
 			void goReverse();
