@@ -8,7 +8,12 @@ Car::Car(Config config) {
 	this->lowerLeftWheel = new DcMotor(config.PIN_LOWER_LEFT_E, config.PIN_LOWER_LEFT_I1, config.PIN_LOWER_LEFT_I2);
 }
 
-Car::~Car() { }
+Car::~Car() {
+	delete this->lowerRightWheel;
+	delete this->upperRightWheel;
+	delete this->upperLeftWheel;
+	delete this->lowerLeftWheel;
+}
 
 void Car::start() {
 	int speed = 255;
