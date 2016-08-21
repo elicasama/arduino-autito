@@ -6,11 +6,13 @@ Car* car;
 void setup() {
 	setPwmFrequencies();
 	car = new Car(config);
-	car->start();
 }
 
 void loop() {
-
+	car->start();
+	delay(2000);
+	car->stop();
+	delay(2000);
 }
 
 

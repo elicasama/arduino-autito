@@ -15,6 +15,7 @@
 			virtual ~Car();
 
 			void start();
+			void stop();
 
 			// -----
 			private:

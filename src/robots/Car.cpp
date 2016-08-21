@@ -22,3 +22,10 @@ void Car::start() {
 	this->upperLeftWheel->start(speed);
 	this->lowerLeftWheel->start(speed);
 }
+
+void Car::stop() {
+	this->lowerRightWheel->stop();
+	this->upperRightWheel->stop();
+	this->upperLeftWheel->stop();
+	this->lowerLeftWheel->stop();
+}
