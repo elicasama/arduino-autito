@@ -2,10 +2,10 @@
 using namespace robots;
 
 Car::Car(Config config) {
-	this->lowerRightWheel = new DcMotor(config.PIN_LOWER_RIGHT_E, config.PIN_LOWER_RIGHT_I1, config.PIN_LOWER_RIGHT_I2);
-	this->upperRightWheel = new DcMotor(config.PIN_UPPER_RIGHT_E, config.PIN_UPPER_RIGHT_I1, config.PIN_UPPER_RIGHT_I2);
-	this->upperLeftWheel = new DcMotor(config.PIN_UPPER_LEFT_E, config.PIN_UPPER_LEFT_I1, config.PIN_UPPER_LEFT_I2);
-	this->lowerLeftWheel = new DcMotor(config.PIN_LOWER_LEFT_E, config.PIN_LOWER_LEFT_I1, config.PIN_LOWER_LEFT_I2);
+	this->lowerRightWheel = new DcMotor(config.PINS_LOWER_RIGHT.ENABLE, config.PINS_LOWER_RIGHT.CONTROL1, config.PINS_LOWER_RIGHT.CONTROL2);
+	this->upperRightWheel = new DcMotor(config.PINS_UPPER_RIGHT.ENABLE, config.PINS_UPPER_RIGHT.CONTROL1, config.PINS_UPPER_RIGHT.CONTROL2);
+	this->upperLeftWheel = new DcMotor(config.PINS_UPPER_LEFT.ENABLE, config.PINS_UPPER_LEFT.CONTROL1, config.PINS_UPPER_LEFT.CONTROL2);
+	this->lowerLeftWheel = new DcMotor(config.PINS_LOWER_LEFT.ENABLE, config.PINS_LOWER_LEFT.CONTROL1, config.PINS_LOWER_LEFT.CONTROL2);
 }
 
 Car::~Car() {

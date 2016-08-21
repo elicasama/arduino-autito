@@ -3,21 +3,17 @@
 
 	namespace robots {
 		typedef struct {
-			int PIN_LOWER_RIGHT_E;
-			int PIN_LOWER_RIGHT_I1;
-			int PIN_LOWER_RIGHT_I2;
+			int ENABLE;
+			int CONTROL1;
+			int CONTROL2;
+		} WheelPins;
 
-			int PIN_UPPER_RIGHT_E;
-			int PIN_UPPER_RIGHT_I1;
-			int PIN_UPPER_RIGHT_I2;
-
-			int PIN_UPPER_LEFT_E;
-			int PIN_UPPER_LEFT_I1;
-			int PIN_UPPER_LEFT_I2;
-
-			int PIN_LOWER_LEFT_E;
-			int PIN_LOWER_LEFT_I1;
-			int PIN_LOWER_LEFT_I2;
+		typedef struct {
+			WheelPins PINS_LOWER_RIGHT;
+			WheelPins PINS_UPPER_RIGHT;
+			WheelPins PINS_UPPER_LEFT;
+			WheelPins PINS_LOWER_LEFT;
 		} Config;
 	}
+
 #endif
