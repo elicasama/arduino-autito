@@ -3,8 +3,7 @@
 
 	#include "Config.h"
 	#include "../utils/globals.h"
-	#include "../devices/DcMotor.h"
-	using namespace devices;
+	#include "WheelPair.h"
 
 	namespace robots {
 		class Car {
@@ -20,10 +19,9 @@
 			// -----
 			private:
 			// -----
-			DcMotor* lowerRightWheel;
-			DcMotor* upperRightWheel;
-			DcMotor* upperLeftWheel;
-			DcMotor* lowerLeftWheel;
+
+			WheelPair* frontWheelPair;
+			WheelPair* backWheelPair;
 		};
 	}
 
