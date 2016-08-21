@@ -15,7 +15,7 @@ DcMotor::DcMotor(short enablePin, short control1Pin, short control2Pin) {
 DcMotor::~DcMotor() { }
 
 void DcMotor::start() {
-	digitalWrite(this->enablePin, HIGH);
+	analogWrite(this->enablePin, 100);
 }
 
 void DcMotor::stop() {

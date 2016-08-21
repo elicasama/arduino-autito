@@ -1,6 +1,6 @@
 #define E1 3 // enable
-#define I1 2 // control pin 1
-#define I2 4 // control pin 2
+#define I1 4 // control pin 1
+#define I2 2 // control pin 2
 
 #define E2 9
 #define I21 8
@@ -11,8 +11,8 @@
 #define I32 13
 
 #define E4 10
-#define I41 5
-#define I42 6
+#define I41 6
+#define I42 5
 
 void setup() {
 	for (int i = 1 ; i<=13 ; i++)
