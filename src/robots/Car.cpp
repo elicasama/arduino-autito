@@ -2,8 +2,8 @@
 using namespace robots;
 
 Car::Car(Config config) {
-	this->backWheelPair = new WheelPair(config.PINS_LOWER_RIGHT, config.PINS_UPPER_RIGHT);
-	this->frontWheelPair = new WheelPair(config.PINS_LOWER_LEFT, config.PINS_UPPER_LEFT);
+	this->backWheelPair = new WheelPair(config.PINS_LOWER_LEFT, config.PINS_LOWER_RIGHT);
+	this->frontWheelPair = new WheelPair(config.PINS_UPPER_LEFT, config.PINS_UPPER_RIGHT);
 }
 
 Car::~Car() {

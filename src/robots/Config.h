@@ -9,10 +9,10 @@
 		} WheelPins;
 
 		typedef struct {
+			WheelPins PINS_LOWER_LEFT;
 			WheelPins PINS_LOWER_RIGHT;
 			WheelPins PINS_UPPER_RIGHT;
 			WheelPins PINS_UPPER_LEFT;
-			WheelPins PINS_LOWER_LEFT;
 		} Config;
 	}
 

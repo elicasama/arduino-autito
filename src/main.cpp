@@ -18,8 +18,8 @@ void loop() {
 
 void setPwmFrequencies() {
 	int divisor = 64;
+	setPwmFrequency(config.PINS_LOWER_LEFT.ENABLE, divisor);
 	setPwmFrequency(config.PINS_LOWER_RIGHT.ENABLE, divisor);
 	setPwmFrequency(config.PINS_UPPER_RIGHT.ENABLE, divisor);
 	setPwmFrequency(config.PINS_UPPER_LEFT.ENABLE, divisor);
-	setPwmFrequency(config.PINS_LOWER_LEFT.ENABLE, divisor);
 }
