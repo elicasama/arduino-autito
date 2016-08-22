@@ -16,6 +16,8 @@ DcMotor::~DcMotor() { }
 
 void DcMotor::setSpeed(int speed) {
 	int sense = signum(speed);
+	int amount = abs(speed);
+
 	switch (sense) {
 		case 1:
 			this->goForward();
@@ -31,7 +33,7 @@ void DcMotor::setSpeed(int speed) {
 	}
 
 	const int MIN_SPEED = 150;
-	int finalSpeed = map(abs(speed), 0, 255, MIN_SPEED, 255);
+	int finalSpeed = map(amount, 0, 255, MIN_SPEED, 255);
 	analogWrite(this->enablePin, finalSpeed);
 }
 

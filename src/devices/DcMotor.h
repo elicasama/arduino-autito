@@ -16,9 +16,9 @@
 			// -----
 			private:
 			// -----
-			short enablePin;
-			short control1Pin;
-			short control2Pin;
+			int enablePin;
+			int control1Pin;
+			int control2Pin;
 
 			void goForward();
 			void goReverse();

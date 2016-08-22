@@ -13,8 +13,8 @@
 			Car(Config config);
 			virtual ~Car();
 
-			void start();
-			void stop();
+			void setSpeed(int speed);
+			void setDirection(int direction);
 
 			// -----
 			private:

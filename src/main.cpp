@@ -6,13 +6,16 @@ Car* car;
 void setup() {
 	setPwmFrequencies();
 	car = new Car(config);
+	car->setSpeed(255);
 }
 
 void loop() {
-	car->start();
-	delay(2000);
-	car->stop();
-	delay(2000);
+	car->setDirection(0);
+	delay(1000);
+	car->setDirection(-255);
+	delay(1000);
+	car->setDirection(255);
+	delay(1000);
 }
 
 

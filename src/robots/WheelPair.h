@@ -22,6 +22,7 @@
 			// -----
 			DcMotor* leftWheel;
 			DcMotor* rightWheel;
+			int speed;
 		};
 	}
 

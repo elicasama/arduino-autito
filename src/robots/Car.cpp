@@ -11,12 +11,12 @@ Car::~Car() {
 	delete this->frontWheelPair;
 }
 
-void Car::start() {
-	this->backWheelPair->setSpeed(1);
-	this->frontWheelPair->setSpeed(1);
+void Car::setSpeed(int speed) {
+	this->backWheelPair->setSpeed(speed);
+	this->frontWheelPair->setSpeed(speed);
 }
 
-void Car::stop() {
-	this->backWheelPair->setSpeed(0);
-	this->frontWheelPair->setSpeed(0);
+void Car::setDirection(int direction) {
+	this->backWheelPair->setDirection(direction);
+	this->frontWheelPair->setDirection(direction);
 }
