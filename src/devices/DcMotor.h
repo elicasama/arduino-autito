@@ -8,13 +8,10 @@
 			// ----
 			public:
 			// ----
-			DcMotor(short enablePin, short control1Pin, short control2Pin);
+			DcMotor(int enablePin, int control1Pin, int control2Pin);
 			virtual ~DcMotor();
 
-			void start(int speed);
-			void stop();
-			void goForward();
-			void goReverse();
+			void setSpeed(int speed);
 
 			// -----
 			private:
@@ -23,6 +20,8 @@
 			short control1Pin;
 			short control2Pin;
 
+			void goForward();
+			void goReverse();
 			void changeControlPins(bool control1, bool control2);
 		};
 	}

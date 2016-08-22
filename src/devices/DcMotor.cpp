@@ -1,27 +1,38 @@
 #include "DcMotor.h"
 using namespace devices;
 
-DcMotor::DcMotor(short enablePin, short control1Pin, short control2Pin) {
+DcMotor::DcMotor(int enablePin, int control1Pin, int control2Pin) {
 	this->enablePin = enablePin;
 	this->control1Pin = control1Pin;
 	this->control2Pin = control2Pin;
 
-	short pins[] = { enablePin, control1Pin, control2Pin };
-	foreach(short* pin, pins) pinMode(*pin, OUTPUT);
+	int pins[] = { enablePin, control1Pin, control2Pin };
+	foreach(int* pin, pins) pinMode(*pin, OUTPUT);
 
 	this->goForward();
 }
 
 DcMotor::~DcMotor() { }
 
-void DcMotor::start(int speed) {
-	const int MIN_SPEED = 100;
-	int finalSpeed = map(speed, 0, 255, MIN_SPEED, 255);
-	analogWrite(this->enablePin, finalSpeed);
-}
+void DcMotor::setSpeed(int speed) {
+	int sense = signum(speed);
+	switch (sense) {
+		case 1:
+			this->goForward();
+			break;
 
-void DcMotor::stop() {
-	digitalWrite(this->enablePin, LOW);
+		case -1:
+			this->goReverse();
+			break;
+
+		default:
+			digitalWrite(this->enablePin, LOW);
+			return;
+	}
+
+	const int MIN_SPEED = 150;
+	int finalSpeed = map(abs(speed), 0, 255, MIN_SPEED, 255);
+	analogWrite(this->enablePin, finalSpeed);
 }
 
 void DcMotor::goForward() {

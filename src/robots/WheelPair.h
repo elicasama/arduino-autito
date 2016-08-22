@@ -14,8 +14,8 @@
 			WheelPair(WheelPins leftWheelPins, WheelPins rightWheelPins);
 			virtual ~WheelPair();
 
-			void start(int speed);
-			void stop();
+			void setSpeed(int speed);
+			void setDirection(int direction);
 
 			// -----
 			private:

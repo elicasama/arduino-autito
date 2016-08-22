@@ -12,12 +12,11 @@ Car::~Car() {
 }
 
 void Car::start() {
-	int speed = 255;
-	this->backWheelPair->start(speed);
-	this->frontWheelPair->start(speed);
+	this->backWheelPair->setSpeed(1);
+	this->frontWheelPair->setSpeed(1);
 }
 
 void Car::stop() {
-	this->backWheelPair->stop();
-	this->frontWheelPair->stop();
+	this->backWheelPair->setSpeed(0);
+	this->frontWheelPair->setSpeed(0);
 }

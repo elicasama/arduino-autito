@@ -11,12 +11,11 @@ WheelPair::~WheelPair() {
 	delete this->rightWheel;
 }
 
-void WheelPair::start(int speed) {
-	this->leftWheel->start(speed);
-	this->rightWheel->start(speed);
+void WheelPair::setSpeed(int speed) {
+	this->leftWheel->setSpeed(speed);
+	this->rightWheel->setSpeed(speed);
 }
 
-void WheelPair::stop() {
-	this->leftWheel->stop();
-	this->rightWheel->stop();
+void WheelPair::setDirection(int direction) {
+	// TODO
 }

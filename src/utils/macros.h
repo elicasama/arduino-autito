@@ -11,4 +11,6 @@
 			keep = !keep, count++) \
 		  for(item = (array)+count; keep; keep = !keep)
 
+	#define signum(number) number == 0 ? 0 : (number > 0 ? 1 : -1)
+
 #endif
