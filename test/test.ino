@@ -1,7 +1,6 @@
 #include <SoftwareSerial.h>
-#include <AFMotor.h>
 
-SoftwareSerial BT(0, 1); 
+SoftwareSerial BT(A0, A1); 
 // creates a "virtual" serial port/UART
 // connect BT module TX to D10
 // connect BT module RX to D11
