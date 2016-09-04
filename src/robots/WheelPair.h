@@ -11,7 +11,7 @@
 			// ----
 			public:
 			// ----
-			WheelPair(int leftWheelNumber, int rightWheelNumber);
+			WheelPair(WheelDefinition leftWheel, WheelDefinition rightWheel);
 			virtual ~WheelPair();
 
 			void setSpeed(int speed);

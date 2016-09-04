@@ -9,7 +9,7 @@
 			// ----
 			public:
 			// ----
-			DcMotor(int motorNumber);
+			DcMotor(int motorNumber, int minSpeed);
 			virtual ~DcMotor();
 
 			void setSpeed(int speed);
@@ -17,7 +17,8 @@
 			// -----
 			private:
 			// -----
-			AF_DCMotor motor;
+			AF_DCMotor* motor;
+			int minSpeed;
 		};
 	}
 

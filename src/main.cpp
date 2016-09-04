@@ -3,16 +3,17 @@
 Car* car;
 
 void setup() {
-	car->setSpeed(255);
+	car = new Car(config);
+	car->setSpeed(1);
 }
 
 void loop() {
-	car->setDirection(0);
-	delay(1000);
-	car->setDirection(-255);
-	delay(1000);
-	car->setDirection(255);
-	delay(1000);
+//	car->setDirection(0);
+//	delay(1000);
+//	car->setDirection(-180);
+//	delay(1000);
+//	car->setDirection(180);
+//	delay(1000);
 }
 
 // TODO: Bluetooth Control
