@@ -8,12 +8,7 @@ void setup() {
 }
 
 void loop() {
-//	car->setDirection(0);
-//	delay(1000);
-//	car->setDirection(-180);
-//	delay(1000);
-//	car->setDirection(180);
-//	delay(1000);
+
 }
 
 // TODO: Bluetooth Control
