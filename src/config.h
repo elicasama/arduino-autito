@@ -4,10 +4,7 @@
 	#include "robots/Config.h"
 
 	robots::Config config = {
-		3, 4, 2,
-		9, 8, 7,
-		11, 12, 13,
-		10, 6, 5
+		1, 2, 3, 4
 	};
 
 #endif

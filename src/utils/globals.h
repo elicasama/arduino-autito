@@ -3,6 +3,5 @@
 
 	#include "macros.h"
 	#include "Arduino.h"
-	#include "arduino/arduino.h"
 
 #endif

@@ -1,9 +1,9 @@
 #include "WheelPair.h"
 using namespace robots;
 
-WheelPair::WheelPair(WheelPins leftWheelPins, WheelPins rightWheelPins) {
-	this->leftWheel = new DcMotor(leftWheelPins.ENABLE, leftWheelPins.CONTROL1, leftWheelPins.CONTROL2);
-	this->rightWheel = new DcMotor(rightWheelPins.ENABLE, rightWheelPins.CONTROL1, rightWheelPins.CONTROL2);
+WheelPair::WheelPair(int leftWheelNumber, int rightWheelNumber) {
+	this->leftWheel = new DcMotor(leftWheelNumber);
+	this->rightWheel = new DcMotor(rightWheelNumber);
 	this->speed = 0;
 }
 
