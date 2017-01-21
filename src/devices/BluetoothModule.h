@@ -1,8 +1,8 @@
 #ifndef SRC_DEVICES_BLUETOOTHMODULE_H_
 #define SRC_DEVICES_BLUETOOTHMODULE_H_
 
-	#include "../Config.h"
 	#include "../utils/globals.h"
+	#include "../Config.h"
 	#include <SoftwareSerial.h>
 
 	namespace devices {

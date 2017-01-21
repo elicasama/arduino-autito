@@ -1,8 +1,8 @@
 #ifndef SRC_ROBOTS_CAR_H_
 #define SRC_ROBOTS_CAR_H_
 
-	#include "../Config.h"
 	#include "../utils/globals.h"
+	#include "../Config.h"
 	#include "WheelPair.h"
 
 	namespace robots {
@@ -19,7 +19,6 @@
 			// -----
 			private:
 			// -----
-
 			WheelPair* frontWheelPair;
 			WheelPair* backWheelPair;
 		};
