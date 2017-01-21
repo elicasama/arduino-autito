@@ -1,7 +1,7 @@
 #ifndef SRC_ROBOTS_WHEELPAIR_H_
 #define SRC_ROBOTS_WHEELPAIR_H_
 
-	#include "Config.h"
+	#include "../Config.h"
 	#include "../utils/globals.h"
 	#include "../devices/DcMotor.h"
 	using namespace devices;
