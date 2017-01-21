@@ -15,6 +15,7 @@
 
 			void setSpeed(int speed);
 			void setDirection(int direction);
+			void reset();
 
 			// -----
 			private:

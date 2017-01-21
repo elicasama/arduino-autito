@@ -20,3 +20,8 @@ void Car::setDirection(int direction) {
 	this->frontWheelPair->setDirection(direction);
 	this->backWheelPair->setDirection(direction);
 }
+
+void Car::reset() {
+	this->setSpeed(0);
+	this->setDirection(0);
+}

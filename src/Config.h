@@ -17,6 +17,7 @@
 		WheelDefinition WHEEL_LOWER_LEFT;
 		WheelDefinition WHEEL_LOWER_RIGHT;
 		BluetoothDefinition BLUETOOTH;
+		bool STOP_WHEN_IDDLE;
 	} Config;
 
 #endif

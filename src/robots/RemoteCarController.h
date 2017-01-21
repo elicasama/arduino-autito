@@ -18,6 +18,8 @@
 		#define MIN_ANGLE 65
 		#define MID_ANGLE 88
 		#define MAX_ANGLE 110
+		#define MAX_IDDLE_TIME 25000
+		#define MAX_TRACK_ITERATIONS 100000
 
 		class RemoteCarController {
 			// ----
@@ -36,9 +38,13 @@
 			int getDirection(CarCommand* command);
 			bool isIdle(CarCommand* command);
 			bool isForward(CarCommand* command);
+			void trackLastCommand();
 
 			Car* car;
 			BluetoothModule* bluetooth;
+			bool stopWhenIddle;
+			int updateCount;
+			int lastCommand;
 		};
 	}
 
