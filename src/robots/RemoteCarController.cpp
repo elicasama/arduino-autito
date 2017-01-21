@@ -16,8 +16,9 @@ void RemoteCarController::begin() {
 }
 
 void RemoteCarController::update() {
-	uint8_t* bytes = this->bluetooth->readPacket(sizeof(CarCommand));
-	CarCommand* command = (CarCommand*) bytes;
+	CarCommand* command = (CarCommand*) this->bluetooth->readPacket(
+		sizeof(CarCommand)
+	);
 	if (command == NULL) return;
 
 	car->setSpeed(this->getSpeed(command));
@@ -41,10 +42,10 @@ int RemoteCarController::getDirection(CarCommand* command) {
 }
 
 bool RemoteCarController::isIdle(CarCommand* command) {
-	return command->direction == 243 || command->speed == 0;
+	return command->direction == IDLE_STATE || command->speed == 0;
 }
 
 bool RemoteCarController::isForward(CarCommand* command) {
-	return command->direction == 241;
+	return command->direction == FORWARD_STATE;
 }
 

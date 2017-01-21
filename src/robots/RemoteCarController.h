@@ -13,6 +13,8 @@
 			uint8_t lightsAndButtons;
 		} CarCommand;
 
+		#define IDLE_STATE 243
+		#define FORWARD_STATE 241
 		#define MIN_ANGLE 65
 		#define MID_ANGLE 88
 		#define MAX_ANGLE 110
